@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "42d725d4-ec96-4a2b-96a5-9030fe65ba98",
+		"_postman_id": "2b276f5c-4007-449c-94f9-7fddc2847a13",
 		"name": "Api Bootcamp SENA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,22 @@
 			"name": "Traer todos los bootcamps",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps"
+					]
+				}
 			},
 			"response": []
 		},
@@ -17,7 +32,23 @@
 			"name": "traer bootcamp por id",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps",
+						"3"
+					]
+				}
 			},
 			"response": []
 		},
@@ -25,7 +56,50 @@
 			"name": "crear bootcamp",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"UX devcamp\",\r\n    \"description\": \"Data Science for senior programers\",\r\n    \"website\": \"python.org/datascience\",\r\n    \"phone\": \"(444) 444 444\",\r\n    \"average_rating\": 1,\r\n    \"average_cost\": 1,\r\n    \"user_id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/bootcamps",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"bootcamps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear nuevo bootcamp con errores",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"UX\",\r\n    \"description\" : \"Data Science for senior programers\",\r\n    \"website\" : \"python.org/datascience\",\r\n    \"phone\" : \"(444) 444 444\",\r\n    \"average_rating\" : 1,\r\n    \"average_cost\" :  \"sin costo\",\r\n    \"user_id\" : 2\r\n}"
+				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/bootcamps",
 					"protocol": "http",
@@ -48,9 +122,19 @@
 			"name": "actualizar bootcamp",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"PHP for beginners\",\r\n    \"description\" : \"PHP for juniors\"\r\n}"
+				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/bootcamps/9",
+					"raw": "http://127.0.0.1:8000/api/bootcamps/1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -62,7 +146,7 @@
 					"path": [
 						"api",
 						"bootcamps",
-						"9"
+						"1"
 					]
 				}
 			},
